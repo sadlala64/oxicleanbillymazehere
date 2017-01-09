@@ -2,7 +2,12 @@ from PIL import Image
 import os
 im = Image.open("oxiclean orange bar.png")
 directory = os.path.dirname(os.path.realpath(__file__))
-image_list = [] # Initialize aggregaotrs
+new_directory = os.path.join(directory, 'modified')
+try:
+    os.mkdir(new_directory)
+except OSError:
+    pass   
+image_list = [] 
 file_list = []   
 for n in range(len(image_list)):
     filename, filetype = os.path.splitext(file_list[n])
