@@ -22,7 +22,7 @@ def get_images(directory=None):
             pass 
     return image_list, file_list          
 
-def paste_on_all_images(directory=None):
+def orange_logo(x,y,directory=None):
     if directory == None:
         directory = os.getcwd()
     new_directory = os.path.join(directory, 'modified') 
@@ -33,7 +33,7 @@ def paste_on_all_images(directory=None):
     image_list,file_list = get_images(directory) 
     for n in range(len(file_list)):
         new_image= image_list[n]
-        new_image.paste(im,(20,20))
+        new_image.paste(im,(x,y))
         filename, filetype = os.path.splitext(file_list[n])
         new_image_filename = os.path.join(new_directory, filename + '.png')
         new_image.save(new_image_filename)    
