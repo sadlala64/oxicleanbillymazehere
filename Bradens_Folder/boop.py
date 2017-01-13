@@ -8,7 +8,7 @@ new_directory = os.path.join(directory, 'modified')
 orange = Image.open("oxicleanorangebar.png")
 memory = Image.open("logo.png") 
 directory_list = os.listdir(directory)
-
+#Gets the image to edit
 def get_images(directory=None):
     image_list = [] 
     file_list = []
@@ -23,7 +23,7 @@ def get_images(directory=None):
         except IOError:
             pass 
     return image_list, file_list          
-
+#Pastes the logo onto the selected image
 def paste_logo(logo,x,y,directory=None):
     if directory == None:
         directory = os.getcwd()
